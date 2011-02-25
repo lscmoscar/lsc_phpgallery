@@ -91,19 +91,19 @@ $images = getImages($title);
 usort($images, 'sorter');
 foreach($images as $img) {
 
-$margAdd = $img[isize][1] + 34;
+	$margAdd = $img[isize][1] + 34;
 
-echo "<li>\n";
-echo "<a class=\"thumb\" name=\"{$img['name']}\" href=\"http://www.lsc.org{$img['file']}\" title=\"{$img['name']}\">\n"; 
-echo "<img src=\"{$img['thumb']}\" alt=\"{$img['name']}\"/>\n"; 
-echo "</a>\n";
-echo "<div style=\"margin-top:{$margAdd}px;\" class=\"caption\">\n";
-echo "<div class=\"image-title\">$img[name]</div>\n";
-echo "<div class=\"image-desc\">$words[$wcount]</div>\n";
-echo "</div></li>\n";
-$wcount++;
-$sizedata = "{$img[isize][3]}\n";
-listsize($fh,$sizedata);
+	echo "<li>\n";
+	echo "<a class=\"thumb\" name=\"{$img['name']}\" href=\"http://www.lsc.org{$img['file']}\" title=\"{$img['name']}\">\n"; 
+	echo "<img src=\"{$img['thumb']}\" alt=\"{$img['name']}\"/>\n"; 
+	echo "</a>\n";
+	echo "<div style=\"margin-top:{$margAdd}px;\" class=\"caption\">\n";
+	echo "<div class=\"image-title\">$img[name]</div>\n";
+	echo "<div class=\"image-desc\">$words[$wcount]</div>\n";
+	echo "</div></li>\n";
+	$wcount++;
+	$sizedata = "{$img[isize][3]}\n";
+	listsize($fh,$sizedata);
 }
 fclose($fh);
 ?>
